@@ -1,0 +1,1 @@
+const plaform = new H.service.Platform({api})
