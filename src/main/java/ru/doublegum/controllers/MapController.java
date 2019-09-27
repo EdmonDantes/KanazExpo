@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/testMap")
 public class MapController {
 
     @RequestMapping(value = "getBadStreet", method = RequestMethod.GET)

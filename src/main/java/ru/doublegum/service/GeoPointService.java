@@ -11,12 +11,16 @@ public class GeoPointService {
     @Autowired
     private GeoPointRepository repository;
 
-    public GeoPoint save(GeoPoint point) {
+    public GeoPoint firstInsert(GeoPoint point) {
         if (point != null) {
             if (point.getId() != null)
                 return repository.save(point);
         }
         return point;
+    }
+
+    public GeoPoint save(GeoPoint point) {
+        return repository.save(point);
     }
 
 }

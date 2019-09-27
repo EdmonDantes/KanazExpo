@@ -12,12 +12,16 @@ public class RoadProblemService {
     @Autowired
     private RoadProblemRepository repository;
 
-    public RoadProblem save(RoadProblem problem) {
+    public RoadProblem firstInsert(RoadProblem problem) {
         if (problem != null)
             if (problem.getId() != null)
                 return problem;
             else
                 return repository.save(problem);
         return null;
+    }
+
+    public RoadProblem save(RoadProblem problem) {
+        return repository.save(problem);
     }
 }
