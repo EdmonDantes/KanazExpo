@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.data.geo.Point;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -19,5 +20,5 @@ public class Road {
     private Point end;
 
     @ManyToMany
-    private Set<RoadProblem> problems;
+    private Set<RoadProblem> problems = new HashSet<>();
 }
