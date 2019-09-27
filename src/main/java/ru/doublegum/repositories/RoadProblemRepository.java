@@ -6,4 +6,5 @@ import ru.doublegum.entityes.RoadProblem;
 
 @Repository
 public interface RoadProblemRepository extends CrudRepository<RoadProblem, Integer> {
+
 }
