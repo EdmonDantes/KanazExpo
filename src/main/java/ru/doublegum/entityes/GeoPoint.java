@@ -13,8 +13,8 @@ public class GeoPoint {
     private Integer id;
 
     @Column(nullable = false)
-    private double x;
+    private double x_ltt;
 
     @Column(nullable = false)
-    private double y;
+    private double y_lng;
 }
