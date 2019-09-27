@@ -1,5 +1,6 @@
 package ru.doublegum.repositories;
 
+import jdk.nashorn.internal.runtime.options.Option;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import ru.doublegum.entityes.GeoPoint;
