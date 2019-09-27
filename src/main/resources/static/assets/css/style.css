@@ -1642,7 +1642,7 @@ img.mfp-img {
     02. Header
 -----------------------------------------*/
 .header-top {
-  background: #444444;
+  background: white;
   padding: 10px 0px;
 }
 .header-top p {
@@ -4004,6 +4004,9 @@ img.mfp-img {
   color: #424242;
   font-size: 14px;
   margin: 0;
+}
+.hero-slide-item{
+  background-color:#CCCCCC;
 }
 
 /*# sourceMappingURL=style.css.map */
