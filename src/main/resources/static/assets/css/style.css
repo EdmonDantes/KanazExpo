@@ -1245,7 +1245,7 @@ img.mfp-img {
   height: 0;
   width: 100%;
   background-color: #1d2736;
-  transition: all 0.3s ease 0s;
+  transition: all 0.1s ease 0s;
   content: "";
   transform: translateX(-50%) translateY(-50%) rotate(-45deg);
   opacity: 0;
@@ -1664,7 +1664,8 @@ img.mfp-img {
 .socail-top {
   text-align: right;
 }
-.socail-top li {
+.socail-top li {color: #0b0b0b;
+
   display: inline-block;
   margin-left: 25px;
 }
@@ -2924,6 +2925,7 @@ img.mfp-img {
    06. Contact Css 
 ----------------------------------------*/
 .contact_form_container {
+  color: #0b0b0b;
   padding: 65px 60px;
 }
 .contact_form_container.repair-request-form {
@@ -4013,6 +4015,11 @@ img.mfp-img {
   top: 0;
   position: absolute;
   background-color: rgba(0, 0, 184, 0.3);
+}
+
+.registration
+{
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
