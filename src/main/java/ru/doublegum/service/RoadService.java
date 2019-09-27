@@ -17,8 +17,20 @@ public class RoadService {
     @Autowired
     private RoadProblemService roadProblemService;
 
+    public Road firstInsert(Road road) {
+        if (road != null){
+            if (road.getId() != null)
+                return repository.save(road);
+        }
+        return road;
+    }
+
+    public Road save(Road road) {
+        return repository.save(road);
+    }
+
     public boolean addProblem(int idRoad, RoadProblem problem) {
-        problem = roadProblemService.save(problem);
+        problem = roadProblemService.firstInsert(problem);
 
         if (problem != null) {
             Optional<Road> road  = repository.findById(idRoad);
