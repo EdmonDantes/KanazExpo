@@ -14,7 +14,7 @@ public class RoadProblem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToMany
+    @OneToMany
     private Set<GeoPoint> geoPoints = new HashSet<>();
 
     @Column(nullable = false)

@@ -1,7 +1,6 @@
 package ru.doublegum.entityes;
 
 import lombok.Data;
-import org.springframework.data.geo.Point;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -15,10 +14,11 @@ public class Road {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private Point start;
+    @OneToOne
+    private GeoPoint start;
+    @OneToOne
+    private GeoPoint end;
 
-    private Point end;
-
-    @ManyToMany
+    @OneToMany
     private Set<RoadProblem> problems = new HashSet<>();
 }
