@@ -3,10 +3,9 @@ package ru.doublegum.entityes;
 import lombok.Data;
 import org.springframework.data.geo.Point;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -16,8 +15,13 @@ public class RoadProblem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private Point geoPoint;
+    @Column(nullable = false)
+    private Set<Point> geoPoints = new HashSet<>();
 
-    private Integer weight;
+    @Column(nullable = false)
+    private RoadProblemType type = RoadProblemType.ROUGHNESS;
+
+    @Column(nullable = false)
+    private Integer weight = 0;
 
 }
