@@ -3,24 +3,18 @@ package ru.doublegum.entityes;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Data
-public class RoadProblem {
+public class GeoPoint {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToMany
-    private Set<GeoPoint> geoPoints = new HashSet<>();
+    @Column(nullable = false)
+    private double x;
 
     @Column(nullable = false)
-    private RoadProblemType type = RoadProblemType.ROUGHNESS;
-
-    @Column(nullable = false)
-    private Integer weight = 0;
-
+    private double y;
 }
