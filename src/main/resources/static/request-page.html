@@ -139,42 +139,43 @@
 <!--// Header -->
 
 <!-- Request -->
-<div class="registration justify-content-center col-lg-12 col-md-12 col-sm-12 col-12">
-
-    <div class="contact_form_container repair-request-form col-lg-3 ">
-        <div class="ct-title-2">
-            <h2>Подать заявку</h2>
-        </div>
-        <div class="repair-service-form">
-            <form action="#">
-                <div class="row">
-
-                    <select class="form-control " id="exampleFormControlSelect1">
-                        <option>Убитая дорга</option>
-                        <option>Яма </option>
-                        <option>Люк </option>
-
-                    </select>
-
-
-                    <div class="col-lg-12 ">
-                        <textarea name="message" placeholder="Опишите проблему*"></textarea>
+<div class="container-fluid">
+    <div class="row no-gutters">
+        <div class="contact_form_container repair-request-form col-lg-4 col-md-12 col-sm-12 col-12">
+            <div class="ct-title-2">
+                <h2>Подать заявку</h2>
+            </div>
+            <div class="repair-service-form">
+                <form action="#">
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="form-control " id="exampleFormControlSelect1">
+                                <option>Убитая дорга</option>
+                                <option>Яма</option>
+                                <option>Люк</option>
+                            </select>
+                        </div>
                     </div>
-
-                        <input type="file">
-
-                    <div class="col-lg-12">
-                        <input type="submit" value="Отправить заявку">
+                    <div class="row">
+                        <div class="col-lg-12 ">
+                            <textarea name="message" placeholder="Опишите проблему*"></textarea>
+                        </div>
                     </div>
-                </div>
-            </form>
-
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="file" class="px-0 py-2" style = "height: auto; background:none; border:none">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="submit" value="Отправить заявку">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-
-
+        <div id="map" class="col-8"></div>
     </div>
-    <div id="map" class="col-9"></div>
-
 </div>
 <!-- //Request -->
 
@@ -191,7 +192,8 @@
                     <div class="footer-widget footer-style-1">
                         <h5 class="ft-title">ABOUT <span>US</span></h5>
                         <div class="content">
-                            <p>There are many variations of pof em Ipsum avalable, but the majority haveatime form, binjected humour, or romised scvono dos nai..but.</p>
+                            <p>There are many variations of pof em Ipsum avalable, but the majority haveatime form,
+                                binjected humour, or romised scvono dos nai..but.</p>
                         </div>
                     </div>
                 </div>
@@ -237,8 +239,8 @@
                         <div class="content">
                             <p>There are many variations ofof reavalable, but the majority </p>
                             <div class="input-box newsletter-box">
-                                <form id="mc-form" class="mc-form footer-newsletter" >
-                                    <input  id="mc-email" type="email" autocomplete="off">
+                                <form id="mc-form" class="mc-form footer-newsletter">
+                                    <input id="mc-email" type="email" autocomplete="off">
                                     <button id="mc-submit"><i class="fa fa-paper-plane-o"></i></button>
                                 </form>
                             </div>
@@ -285,17 +287,16 @@
 ============================================ -->
 
 <!-- Plugins JS -->
+
+<script src="http://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+
 <script src="assets/js/plugins.js"></script>
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
-<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
-        type="text/javascript" charset="utf-8"></script>
-<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
-        type="text/javascript" charset="utf-8"></script>
 
-<script src = "http://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-<script src = "http://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
-<script src = "http://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/map.js"></script>
 </body>
 
 </html>
