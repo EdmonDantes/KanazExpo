@@ -138,32 +138,41 @@
 </header>
 <!--// Header -->
 
-
+<!-- Request -->
 <div class="registration justify-content-center col-lg-12 col-md-12 col-sm-12 col-12">
-    <div class="contact_form_container repair-request-form col-lg-6">
+    <div class="contact_form_container repair-request-form col-lg-3 ">
         <div class="ct-title-2">
-            <h2>Request a Quote</h2>
+            <h2>Подать заявку</h2>
         </div>
         <div class="repair-service-form">
             <form action="#">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <input type="text" placeholder="Name*">
+
+                    <select class="form-control " id="exampleFormControlSelect1">
+                        <option>Убитая дорга</option>
+                        <option>Яма</option>
+                        <option>Люк</option>
+
+                    </select>
+
+
+                    <div class="col-lg-12 ">
+                        <textarea name="message" placeholder="Опишите проблему*"></textarea>
                     </div>
+
+                        <input type="file" class="form-control-file">
+
                     <div class="col-lg-12">
-                        <input type="text" placeholder="Subject*">
-                    </div>
-                    <div class="col-lg-12">
-                        <textarea name="message" placeholder="Your Massege*"></textarea>
-                    </div>
-                    <div class="col-lg-12">
-                        <input type="submit" value="Submit Inquiry">
+                        <input type="submit" value="Отправить заявку">
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<!-- //Request -->
+
+<div style="width: 640px; height: 480px" id="mapContainer"></div>
 
 <!-- Footer -->
 <footer class="footer">
@@ -273,6 +282,10 @@
 <script src="assets/js/plugins.js"></script>
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+        type="text/javascript" charset="utf-8"></script>
+<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+        type="text/javascript" charset="utf-8"></script>
 
 
 </body>

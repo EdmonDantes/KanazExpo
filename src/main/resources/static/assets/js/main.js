@@ -9,6 +9,7 @@ $.fn.elExists = function() {
 /*--
 Menu Sticky
 -----------------------------------*/
+
 var windows = $(window);
 var screenSize = windows.width();
 var sticky = $('.header-sticky');
@@ -26,10 +27,14 @@ windows.on('scroll', function () {
         Clickable menu active 
     -------------------------------*/
     const slinky = $('#menu').slinky()
-    
+    /*--
+    Check password
+------------------------------*/
     /*--
         sidebarCart 
     ------------------------------*/
+
+
     function sidebarMainmenu() {
         var menuTrigger = $('.clickable-mainmenu-active a'),
             endTrigger = $('button.clickable-mainmenu-close'),

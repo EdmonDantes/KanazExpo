@@ -4022,4 +4022,15 @@ img.mfp-img {
   text-align: center;
 }
 
+#map {
+  width: 95%;
+  height: 450px;
+  background: grey;
+}
+
+#panel {
+  width: 100%;
+  height: 400px;
+}
+
 /*# sourceMappingURL=style.css.map */
