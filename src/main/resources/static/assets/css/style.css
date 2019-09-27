@@ -1642,7 +1642,7 @@ img.mfp-img {
     02. Header
 -----------------------------------------*/
 .header-top {
-  background: #444444;
+  background: white;
   padding: 10px 0px;
 }
 .header-top p {
