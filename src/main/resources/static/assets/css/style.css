@@ -2929,6 +2929,8 @@ img.mfp-img {
   padding: 65px 60px;
 }
 .contact_form_container.repair-request-form {
+  padding: 10px 15px;
+  border-right: 1px solid #ccc;
   background: #f4f4f4;
 }
 .contact_form_container.repair-request-form .ct-title-2 {
@@ -4020,6 +4022,17 @@ img.mfp-img {
 .registration
 {
   text-align: center;
+}
+
+#map {
+  width: 95%;
+  height: 450px;
+  background: grey;
+}
+
+#panel {
+  width: 100%;
+  height: 400px;
 }
 
 /*# sourceMappingURL=style.css.map */
