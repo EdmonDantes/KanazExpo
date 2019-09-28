@@ -143,29 +143,43 @@
     <div class="justify-content-center col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="container contact_form_container repair-request-form col-lg-6">
             <div class="ct-title-2">
-                <h2>Request a Quote</h2>
+                <h2>Регистарция</h2>
             </div>
             <div class="repair-service-form">
                 <form action="#">
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="text" placeholder="Name*">
+                            <input type="name" required placeholder="Имя*">
                         </div>
                         <div class="col-lg-12">
-                            <input type="text" placeholder="Subject*">
+                            <input type="name" required placeholder="Фамилия*">
                         </div>
                         <div class="col-lg-12">
-                            <textarea name="message" placeholder="Your Massege*"></textarea>
+                            <input type="email"  required placeholder="E-mail*">
+                        </div>
+
+                        <div class="col-lg-12">
+                            <input name="password1" type="password" required  id="password1" placeholder="Пароль*">
                         </div>
                         <div class="col-lg-12">
-                            <input type="submit" value="Submit Inquiry">
+                            <input type="password"  name="password2" required id="password2" placeholder="Повторите пароль*">
                         </div>
+                        <div class="error"></div>
+
+
                     </div>
+                    <div class="registrationFormAlert" id="divCheckPasswordMatch">
+
+                    </div>
+                        <div class="col-lg-12">
+                            <input id ="submit_button" type="submit" value="Зарегистрироваться" onclick="return validateForm()">
+                        </div>
+
                 </form>
             </div>
         </div>
     </div>
-</div>
+
 <!-- Footer -->
 <footer class="footer">
     <div class="footer-top bg-gray section-pt-90 section-pb">
@@ -272,6 +286,7 @@
 ============================================ -->
 
 <!-- Plugins JS -->
+<script src = "assets/js/myscripts.js"></script>
 <script src="assets/js/plugins.js"></script>
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
