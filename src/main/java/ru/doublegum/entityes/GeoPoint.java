@@ -3,13 +3,13 @@ package ru.doublegum.entityes;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import lombok.Data;
-import ru.doublegum.DoubleGumApplicationStartClass;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
-public class GeoPoint {
+public class GeoPoint implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

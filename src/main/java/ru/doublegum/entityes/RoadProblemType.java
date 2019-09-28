@@ -1,6 +1,8 @@
 package ru.doublegum.entityes;
 
-public enum RoadProblemType {
+import java.io.Serializable;
+
+public enum RoadProblemType implements Serializable {
     ROUGHNESS, // Ямы, шероховатости
     MANHOLE, // Люк
     ROUGHROAD, // Длинная неровная дорога
