@@ -46,4 +46,7 @@ public class RoadService {
     public Optional<Road> findByCityAndName(City city, String name) {
         return repository.findByCityAndName(city, name);
     }
+
+    public Optional<Road> findById(int id) {return repository.findById(id); }
+
 }
