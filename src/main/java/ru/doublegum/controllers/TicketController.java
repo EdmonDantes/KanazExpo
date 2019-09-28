@@ -47,7 +47,7 @@ public class TicketController {
                 data.put("country", address.get("country"));
                 data.put("city", address.get("city"));
                 String locationId = HereApi.getLocationId(data);
-                Optional<City> tmp0 = cityService.findCityFromLocationId(locationId);
+                Optional<City> tmp0 = cityService.findCityByLocationId(locationId);
                 if (!tmp0.isPresent()) {
                     City tmp = new City();
                     tmp.setLocationId(locationId);

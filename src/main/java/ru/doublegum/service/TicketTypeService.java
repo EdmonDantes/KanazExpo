@@ -43,7 +43,7 @@ public class TicketTypeService {
         return repository.save(type);
     }
 
-    public void setDeprecated(int id, Boolean bool) { //TODO Void???
+    public void setDeprecated(int id, Boolean bool) {
 
         Optional<TicketType> type = repository.findById(id);
         if (type.isPresent()) {
