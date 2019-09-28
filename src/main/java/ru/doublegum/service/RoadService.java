@@ -27,14 +27,14 @@ public class RoadService {
         return repository.save(road);
     }
 
-    public boolean addProblem(int idRoad, Ticket problem) {
-        problem = ticketService.firstInsert(problem);
+    public boolean addProblem(int idRoad, Ticket ticket) {
+        ticket = ticketService.firstInsert(ticket);
 
-        if (problem != null) {
-            Optional<Road> road  = repository.findById(idRoad);
+        if (ticket != null) {
+            Optional<Road> road = repository.findById(idRoad);
             if (road.isPresent()) {
                 Road tmp = road.get();
-                tmp.getTickets().add(problem);
+                tmp.getTickets().add(ticket);
                 repository.save(tmp);
                 return true;
             }

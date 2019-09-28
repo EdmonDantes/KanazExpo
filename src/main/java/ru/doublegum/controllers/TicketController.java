@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/problem")
-public class RoadProblemController {
+@RequestMapping("/api/ticket")
+public class TicketController {
 
     @RequestMapping(value = "/add", consumes = "application/json", method = RequestMethod.POST)
     public String add(@RequestBody double x, @RequestBody double y, @RequestBody String type){
@@ -18,6 +18,7 @@ public class RoadProblemController {
         } catch (IOException e) {
             return "Wrong coordinates";
         }
+
         return "Server is wrong";
     }
 }

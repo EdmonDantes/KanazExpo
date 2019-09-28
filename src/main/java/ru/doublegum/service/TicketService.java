@@ -11,13 +11,13 @@ public class TicketService {
     @Autowired
     private TicketRepository repository;
 
-    public Ticket firstInsert(Ticket problem) {
-        if (problem != null && (problem.getId() == null || problem.getId() < 1))
-            return repository.save(problem);
-        return problem;
+    public Ticket firstInsert(Ticket ticket) {
+        if (ticket != null && (ticket.getId() == null || ticket.getId() < 1))
+            return repository.save(ticket);
+        return ticket;
     }
 
-    public Ticket save(Ticket problem) {
-        return repository.save(problem);
+    public Ticket save(Ticket ticket) {
+        return repository.save(ticket);
     }
 }
