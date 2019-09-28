@@ -224,6 +224,14 @@ a:focus {
 /*-- Container Fluid --*/
 .container-fluid {
   padding: 0 0px;
+
+}
+.form-register{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 500px;
+
 }
 
 /*-- 
