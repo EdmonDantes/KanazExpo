@@ -3,13 +3,13 @@ package ru.doublegum.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.doublegum.entities.Ticket;
-import ru.doublegum.repositories.RoadProblemRepository;
+import ru.doublegum.repositories.TicketRepository;
 
 @Service
-public class RoadProblemService {
+public class TicketService {
 
     @Autowired
-    private RoadProblemRepository repository;
+    private TicketRepository repository;
 
     public Ticket firstInsert(Ticket problem) {
         if (problem != null && (problem.getId() == null || problem.getId() < 1))

@@ -15,7 +15,7 @@ public class RoadService {
     private RoadRepository repository;
 
     @Autowired
-    private RoadProblemService roadProblemService;
+    private TicketService ticketService;
 
     public Road firstInsert(Road road) {
         if (road != null && (road.getId() == null || road.getId() < 1))
@@ -28,7 +28,7 @@ public class RoadService {
     }
 
     public boolean addProblem(int idRoad, Ticket problem) {
-        problem = roadProblemService.firstInsert(problem);
+        problem = ticketService.firstInsert(problem);
 
         if (problem != null) {
             Optional<Road> road  = repository.findById(idRoad);
