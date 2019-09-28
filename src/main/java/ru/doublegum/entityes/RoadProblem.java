@@ -3,12 +3,13 @@ package ru.doublegum.entityes;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Data
-public class RoadProblem {
+public class RoadProblem implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
