@@ -43,7 +43,10 @@ public class TicketController {
 
     @ModelAttribute
     public void attributes(HttpServletResponse response){
+        // TODO :delete in production
         response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT");
+        response.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
     }
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
