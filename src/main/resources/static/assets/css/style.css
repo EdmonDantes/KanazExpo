@@ -4057,3 +4057,62 @@ img.mfp-img {
 {
   color: #555;
 }
+
+.profile-sidebar {
+  background-color: #f4f4f4;
+  border-right: 1px solid #ccc;
+}
+
+.profile-container {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.list
+{
+  background-color: rgba(3, 27, 137, 0.22);
+  border-radius: 20px;
+  padding: 0 0 20px 0;
+  text-align: center;
+  box-shadow: 5px 5px 10px 0px #3498DB;
+  margin-right: 50px;
+  margin-bottom: 50px;
+
+}
+.item-list
+{
+  overflow-y: scroll;
+  height: 250px;
+  padding: 0 20px;
+}
+.item-list::-webkit-scrollbar
+{
+  width: 8px;
+  height: 6px;
+  background-color: #3498DB;
+}
+.item-list::-webkit-scrollbar-thumb
+{
+  width: 8px;
+  height: 6px;
+  background-color: #2A579E;
+}
+.list_title
+{
+  margin: 0 0 20px 0;
+  padding: 20px;
+  border-bottom: 1px solid black;
+  padding: 5px 10px;
+  position: relative;
+}
+.list_title::after
+{
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  vertical-align: middle;
+  background-size: 20px 20px;
+  top: 17px;
+}
