@@ -20,11 +20,11 @@ public class Ticket implements Serializable {
     @Column(nullable = false)
     private Double y;
 
-    @ManyToOne
-    private TicketProblemType type;
-
     @Column(nullable = false)
     private Integer weight = 0;
+
+    @ManyToOne
+    private TicketProblemType type;
 
     @ManyToOne
     private TicketStatus status;

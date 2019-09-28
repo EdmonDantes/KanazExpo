@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import ru.doublegum.entities.Ticket;
 
 @Repository
-public interface RoadProblemRepository extends CrudRepository<Ticket, Integer> {
+public interface TicketRepository extends CrudRepository<Ticket, Integer> {
 
 }
