@@ -50,7 +50,7 @@ public class HereApi {
 
     public static Map<String, String> getAddressFromPoint(double x, double y) throws IOException {
         Map<String, String> params = new HashMap<>();
-        params.put("prox", x + "," + "y" + "," + 15);
+        params.put("prox", x + "," + y + "," + 15);
         params.put("mode", "retrieveAddresses");
         params.put("maxresults", "1");
         params.put("gen","9");
@@ -69,7 +69,7 @@ public class HereApi {
             result.put("district", obj.get("District").getAsString());
         if (obj.has("Street"))
             result.put("street", obj.get("Street").getAsString());
-        
+
         return result;
     }
 
