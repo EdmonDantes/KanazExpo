@@ -1,7 +1,7 @@
 package ru.doublegum.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-import ru.doublegum.entityes.City;
+import ru.doublegum.entities.City;
 
 import java.util.List;
 import java.util.Optional;

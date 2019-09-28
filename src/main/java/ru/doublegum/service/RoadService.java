@@ -34,7 +34,7 @@ public class RoadService {
             Optional<Road> road  = repository.findById(idRoad);
             if (road.isPresent()) {
                 Road tmp = road.get();
-                tmp.getProblems().add(problem);
+                tmp.getTickets().add(problem);
                 repository.save(tmp);
                 return true;
             }
