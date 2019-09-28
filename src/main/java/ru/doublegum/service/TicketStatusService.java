@@ -14,4 +14,17 @@ public class TicketStatusService {
     public TicketStatus getCreatedStatus(){
         return repository.findById(1).orElse(null);
     }
+
+    public TicketStatus getCheckedStatus() { return repository.findById(2).orElse(null); }
+
+    public TicketStatus getStartedStatus(){
+        return repository.findById(3).orElse(null);
+    }
+
+    public TicketStatus getEndedStatus() { return repository.findById(4).orElse(null); }
+
+    public TicketStatus getClosedStatus(){
+        return repository.findById(5).orElse(null);
+    }
+
 }
