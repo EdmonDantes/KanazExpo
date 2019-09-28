@@ -18,10 +18,8 @@ public class RoadService {
     private RoadProblemService roadProblemService;
 
     public Road firstInsert(Road road) {
-        if (road != null){
-            if (road.getId() != null)
-                return repository.save(road);
-        }
+        if (road != null && (road.getId() == null || road.getId() < 1))
+            return repository.save(road);
         return road;
     }
 

@@ -15,8 +15,11 @@ public class RoadProblem implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @OneToMany
-    private Set<GeoPoint> geoPoints = new HashSet<>();
+    @Column(nullable = false)
+    private Double x;
+
+    @Column(nullable = false)
+    private Double y;
 
     @Column(nullable = false)
     private RoadProblemType type = RoadProblemType.ROUGHNESS;
