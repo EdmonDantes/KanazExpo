@@ -11,7 +11,7 @@ public class TicketStatusService {
     @Autowired
     private TicketStatusRepository repository;
 
-    public TicketStatus getFirstStatus(){
+    public TicketStatus getCreatedStatus(){
         return repository.findById(1).orElse(null);
     }
 }
