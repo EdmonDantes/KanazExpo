@@ -15,6 +15,7 @@ import ru.doublegum.service.RoadService;
 import ru.doublegum.service.TicketService;
 import ru.doublegum.service.TicketStatusService;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -39,6 +40,17 @@ public class TicketController {
 
     @Autowired
     TicketService ticketService;
+
+    @ModelAttribute
+    public void attributes(HttpServletResponse response){
+        response.setHeader("Access-Control-Allow-Origin", "*");
+    }
+
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    @ResponseBody
+    public Ticket get(@RequestParam Integer id) {
+        return ticketService.findById(id).orElse(null);
+    }
 
     @RequestMapping(value = "/add", consumes = "application/json", method = RequestMethod.POST)
     @ResponseBody
@@ -98,7 +110,7 @@ public class TicketController {
         }
     }
 
-    @RequestMapping(path = "/getAllByGeo", method = RequestMethod.GET, consumes = "application/json")
+    @RequestMapping(path = "/getBy/geo", method = RequestMethod.GET, consumes = "application/json")
     @ResponseBody
     public List<Ticket> getAllByGeo(@RequestParam double x0, @RequestParam double y0, @RequestParam double x1, @RequestParam double y1) {
         return ticketService.findAllByXBetweenAndYBetween(x0, y0, x1, y1);
@@ -120,5 +132,11 @@ public class TicketController {
     @ResponseBody
     public Iterable<TicketType> getAllTicketTypes(){
         return  ticketTypeRepository.findAll();
+    }
+
+    @RequestMapping(path = "/type/get", method = RequestMethod.GET)
+    @ResponseBody
+    public TicketType getType(@RequestParam Integer id){
+        return ticketTypeRepository.findById(id).orElse(null);
     }
 }
