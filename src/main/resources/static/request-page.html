@@ -1,11 +1,11 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="ru">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Моя Дорога</title>
-    <meta name="description" content="">
+    <title>Оставить заявку</title>
+    <meta name="description" content="На этой странице вы можете оставить жалобу на некоторый участок дороги">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -24,18 +24,14 @@
 
 <!-- Header -->
 <header class="header">
-
     <div class="header-bottom-area">
         <div class="container-fluid">
             <div class="row ">
-
                 <div class="col-lg-3 col-md-6 col-6">
-                    <div class="cuscol">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="assets/images/logo/logo.png" alt="logo">
-                            </a>
-                        </div>
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="assets/images/logo/logo.png" alt="logo">
+                        </a>
                     </div>
                 </div>
 
@@ -43,28 +39,22 @@
                     <div class="menu-area d-flex align-items-center justify-content-center">
                         <nav class="main-menu text-center">
                             <ul>
-                                <li class="has-dropdown"><a href="index.html">ГЛАВНАЯ</a>
-
-                                </li>
+                                <li class="has-dropdown"><a href="index.html">ГЛАВНАЯ</a></li>
                                 <li><a href="about.html">O НАС</a></li>
-                                <li><a href="">СЕРВИСЫ</a>
-
-                                </li>
-
-
-
-
+                                <li><a href="#">СЕРВИСЫ</a></li>
+                                <li><a href="team.html">КОМАНДА</a></li>
                                 <li><a href="contact-us.html">КОНТАКТЫ</a></li>
                             </ul>
-                        </nav><!--// main-menu -->
+                        </nav>
+                        <!--// main-menu -->
                         <div class="header-btn text-right">
-                            <a class="btn-circle btn-transparent btn" href="map.html">ПОСМОТРЕТЬ КАРТУ</a>
-                            <a href="request-page.html" class="btn-circle btn">Оставить заявку</a>
+                            <a class="btn-circle btn-transparent btn" href="map.html">Посмотреть карту</a>
+                            <a class="btn-circle btn" href="request-page.html">Оставить заявку</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Show in small device Start -->
+                <!-- ОТОБРАЖАЕТСЯ ПРИ МАЛЕНЬКОМ РАЗМЕРЕ ЭКРАНА -->
                 <div class="clickable-menu clickable-mainmenu-active d-block d-lg-none  col-md-6 col-6">
                     <a href="#"><i class="ti-menu"></i></a>
                 </div>
@@ -74,7 +64,6 @@
                             <span class="ti-close"></span>
                         </button>
                     </div>
-
                     <div id="menu" class="text-left clickable-menu-style">
                         <ul>
                             <li><a href="index.html">HOME</a>
@@ -134,21 +123,30 @@
                 <form action="#">
                     <div class="row">
                         <div class="col-12">
-                            <select class="form-control " id="exampleFormControlSelect1">
-                                <option>Убитая дорга</option>
-                                <option>Яма</option>
-                                <option>Люк</option>
+                            <label for="problemTypeSelect">Выберите категорию проблемы:</label>
+                            <select class="form-control " id="problemTypeSelect">
+                                <option>Разбитая дорога</option>
+                                <option>Дорожная яма</option>
+                                <option>Открытый канализационный люк</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12 ">
-                            <textarea name="message" placeholder="Опишите проблему*"></textarea>
+                        <div class="col-12">
+                            <label for="problemAddress">Приблизительный адрес проблемного участка:</label>
+                            <input id = "problemAddress"type = "text" placeholder="Выберите местоположение на карте" readonly/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="problemDescription">Подробное описание проблемы</label>
+                            <textarea id = "problemDescription" name="message" placeholder="Введите детальное описание проблемы"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="file" class="px-0 py-2" style = "height: auto; background:none; border:none">
+                            <label for="attachProblemPhoto">Прикрепить фото проблемного участка (необязательно):</label>
+                            <input id = "attachProblemPhoto" type="file" class="px-0 py-2" style="background:none; border:none">
                         </div>
                     </div>
                     <div class="row">
