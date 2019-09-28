@@ -1,10 +1,8 @@
 package ru.doublegum.controllers;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.doublegum.entityes.Road;
+import ru.doublegum.entities.Road;
 import ru.doublegum.repositories.RoadRepository;
 
 @RestController

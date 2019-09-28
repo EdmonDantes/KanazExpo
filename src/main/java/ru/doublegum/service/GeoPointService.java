@@ -2,7 +2,7 @@ package ru.doublegum.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.doublegum.entityes.GeoPoint;
+import ru.doublegum.entities.GeoPoint;
 import ru.doublegum.repositories.GeoPointRepository;
 
 @Service

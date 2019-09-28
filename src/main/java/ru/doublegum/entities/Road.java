@@ -1,4 +1,4 @@
-package ru.doublegum.entityes;
+package ru.doublegum.entities;
 
 import lombok.Data;
 
@@ -7,21 +7,25 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
 @Data
-public class RoadProblem implements Serializable {
+@Entity
+public class Road implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    private String name;
+
+    @Column(nullable = false)
+    private Integer sum = 0;
+
+    @Column(nullable = false)
+    private Integer count = 0;
+
     @OneToMany
-    private Set<GeoPoint> geoPoints = new HashSet<>();
+    private Set<Ticket> tickets = new HashSet<>();
 
-    @Column(nullable = false)
-    private RoadProblemType type = RoadProblemType.ROUGHNESS;
-
-    @Column(nullable = false)
-    private Integer weight = 0;
-
+    @ManyToOne
+    private City city;
 }

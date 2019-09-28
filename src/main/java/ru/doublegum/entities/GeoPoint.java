@@ -1,4 +1,4 @@
-package ru.doublegum.entityes;
+package ru.doublegum.entities;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;

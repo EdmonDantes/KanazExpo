@@ -2,8 +2,8 @@ package ru.doublegum.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.doublegum.entityes.Road;
-import ru.doublegum.entityes.RoadProblem;
+import ru.doublegum.entities.Road;
+import ru.doublegum.entities.Ticket;
 import ru.doublegum.repositories.RoadRepository;
 
 import java.util.Optional;
@@ -29,7 +29,7 @@ public class RoadService {
         return repository.save(road);
     }
 
-    public boolean addProblem(int idRoad, RoadProblem problem) {
+    public boolean addProblem(int idRoad, Ticket problem) {
         problem = roadProblemService.firstInsert(problem);
 
         if (problem != null) {
@@ -43,4 +43,8 @@ public class RoadService {
         }
         return false;
     }
+
+//    public boolean deleteProblem(Integer id) {
+//
+//    }
 }
