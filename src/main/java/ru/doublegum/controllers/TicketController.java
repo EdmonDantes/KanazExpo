@@ -90,6 +90,6 @@ public class TicketController {
     @RequestMapping(path = "/type/add", method = RequestMethod.POST, consumes = "applcation/json")
     @ResponseBody
     public String addTicketType(@RequestBody String name, @RequestBody double weight) {
-
+        return "TODO"; //TODO
     }
 }
