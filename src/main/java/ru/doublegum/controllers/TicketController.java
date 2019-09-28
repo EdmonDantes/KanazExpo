@@ -100,9 +100,8 @@ public class TicketController {
 
     @RequestMapping(path = "/getAllByGeo", method = RequestMethod.GET, consumes = "application/json")
     @ResponseBody
-    public List<Ticket> getAllByGeo(@RequestBody String jsonObj) {
-        JsonObject obj = (JsonObject) new JsonParser().parse(jsonObj);
-        return ticketService.findAllByXBetweenAndYBetween(obj.get("x0").getAsDouble(), obj.get("y0").getAsDouble(), obj.get("x1").getAsDouble(), obj.get("y1").getAsDouble());
+    public List<Ticket> getAllByGeo(@RequestParam double x0, @RequestParam double y0, @RequestParam double x1, @RequestParam double y1) {
+        return ticketService.findAllByXBetweenAndYBetween(x0, y0, x1, y1);
     }
 
     @RequestMapping(path = "/type/add", method = RequestMethod.POST, consumes = "application/json")
