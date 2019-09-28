@@ -4073,9 +4073,8 @@ img.mfp-img {
   border-radius: 20px;
   padding: 0 0 20px 0;
   text-align: center;
-  box-shadow: 5px 5px 10px 0px #3498DB;
-  margin-right: 50px;
-  margin-bottom: 50px;
+
+;
 
 }
 .item-list
@@ -4095,6 +4094,10 @@ img.mfp-img {
   width: 8px;
   height: 6px;
   background-color: #2A579E;
+}
+.players_list
+{
+  grid-area: players;
 }
 .list_title
 {
