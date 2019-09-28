@@ -7,6 +7,7 @@ import ru.doublegum.entities.Road;
 import ru.doublegum.entities.Ticket;
 import ru.doublegum.repositories.RoadRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -59,6 +60,10 @@ public class RoadService {
             return true;
         }
         return false;
+    }
+
+    public List<Road> findAllByCity(City city) {
+        return repository.findAllByCityOrderBySumDesc(city);
     }
 
 }

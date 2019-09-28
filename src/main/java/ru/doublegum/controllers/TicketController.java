@@ -41,13 +41,14 @@ public class TicketController {
     @Autowired
     TicketService ticketService;
 
-    @ModelAttribute
-    public void attributes(HttpServletResponse response){
-        // TODO :delete in production
-        response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods", "*");
-        response.setHeader("Access-Control-Allow-Headers", "*");
-    }
+//    @ModelAttribute
+//    public void attributes(HttpServletResponse response){
+//        // TODO :delete in production
+//        response.setHeader("Access-Control-Allow-Origin", "*");
+//        response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+//        response.setHeader("Access-Control-Allow-Headers", "X_PINGOTHER, Content-Type");
+//        response.setHeader("Access-Control-Max-Age","86400");
+//    }
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     @ResponseBody
@@ -116,7 +117,7 @@ public class TicketController {
 
     @RequestMapping(path = "/getBy/geo", method = RequestMethod.GET, consumes = "application/json")
     @ResponseBody
-    public List<Ticket> getAllByGeo(@RequestParam double x0, @RequestParam double y0, @RequestParam double x1, @RequestParam double y1) {
+    public List<Ticket> getByGeo(@RequestParam double x0, @RequestParam double y0, @RequestParam double x1, @RequestParam double y1) {
         return ticketService.findAllByXBetweenAndYBetween(x0, y0, x1, y1);
     }
 
