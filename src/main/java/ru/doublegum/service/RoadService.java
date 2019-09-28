@@ -49,4 +49,16 @@ public class RoadService {
 
     public Optional<Road> findById(int id) {return repository.findById(id); }
 
+    public boolean updateSumAndCount(int id, int sum, int count) {
+        Optional<Road> tmp = repository.findById(id);
+        if (tmp.isPresent()) {
+            Road road = tmp.get();
+            road.setSum(sum);
+            road.setCount(count);
+            repository.save(road);
+            return true;
+        }
+        return false;
+    }
+
 }

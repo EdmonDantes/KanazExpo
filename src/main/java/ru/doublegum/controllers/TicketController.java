@@ -45,8 +45,8 @@ public class TicketController {
     public void attributes(HttpServletResponse response){
         // TODO :delete in production
         response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT");
-        response.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
+        response.setHeader("Access-Control-Allow-Methods", "*");
+        response.setHeader("Access-Control-Allow-Headers", "*");
     }
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
@@ -103,6 +103,7 @@ public class TicketController {
                 if (type.isPresent()) {
                     ticket.setType(type.get());
                     roadService.addTicket(roadOptional.get().getId(), ticketService.save(ticket));
+                    roadService.updateSumAndCount(roadOptional.get().getId(), roadOptional.get().getSum() + type.get().getWeight(), roadOptional.get().getCount() + 1);
                     return "Success";
                 } else
                     return "Wrong type id";
