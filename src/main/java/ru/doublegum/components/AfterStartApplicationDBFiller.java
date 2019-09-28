@@ -15,9 +15,25 @@ public class AfterStartApplicationDBFiller {
 
     @EventListener
     public void fillDataBase(ApplicationReadyEvent ignore) {
-        TicketStatus ticketStatus = new TicketStatus();
-        ticketStatus.setName("Created");
+        TicketStatus createStatus = new TicketStatus();
+        createStatus.setName("Создан");
 
-        ticketStatusRepository.save(ticketStatus);
+        TicketStatus checkStatus = new TicketStatus();
+        checkStatus.setName("Рассмотрена");
+
+        TicketStatus beginStatus = new TicketStatus();
+        beginStatus.setName("Начало работ");
+
+        TicketStatus finishStatus = new TicketStatus();
+        finishStatus.setName("Окончание работ");
+
+        TicketStatus closedStatus = new TicketStatus();
+        closedStatus.setName("Закрыта");
+
+        ticketStatusRepository.save(createStatus);
+        ticketStatusRepository.save(checkStatus);
+        ticketStatusRepository.save(beginStatus);
+        ticketStatusRepository.save(finishStatus);
+        ticketStatusRepository.save(closedStatus);
     }
 }
