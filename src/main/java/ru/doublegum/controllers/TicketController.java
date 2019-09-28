@@ -1,5 +1,7 @@
 package ru.doublegum.controllers;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.doublegum.HereApi;
@@ -15,6 +17,7 @@ import ru.doublegum.service.TicketStatusService;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -39,8 +42,16 @@ public class TicketController {
 
     @RequestMapping(value = "/add", consumes = "application/json", method = RequestMethod.POST)
     @ResponseBody
-    public String add(@RequestBody double x, @RequestBody double y, @RequestBody int typeId, @RequestBody String description, @RequestBody byte[] picture){
+    public String add(@RequestBody String jsonObj){
         try {
+
+            JsonObject obj = (JsonObject) new JsonParser().parse(jsonObj);
+            double x = obj.get("x").getAsDouble();
+            double y = obj.get("y").getAsDouble();
+            int typeId = obj.get("typeId").getAsInt();
+            String description = obj.get("description").getAsString();
+            byte[] picture = obj.get("picture").getAsString().getBytes();
+
             Map<String, String> address = HereApi.getAddressFromPoint(x, y);
             if (address.containsKey("country") && address.containsKey("city")) {
                 Map<String, String> data = new HashMap<>();
@@ -70,13 +81,13 @@ public class TicketController {
                 ticket.setY(y);
                 ticket.setDescription(description);
                 ticket.setPicture(picture);
-                ticket.setStatus(ticketStatusService.getFirstStatus());
+                ticket.setStatus(ticketStatusService.getCreatedStatus());
 
                 Optional<TicketType> type = ticketTypeRepository.findById(typeId);
 
                 if (type.isPresent()) {
                     ticket.setType(type.get());
-                    roadService.addProblem(roadOptional.get().getId(), ticketService.save(ticket));
+                    roadService.addTicket(roadOptional.get().getId(), ticketService.save(ticket));
                     return "Success";
                 } else
                     return "Wrong type id";
@@ -87,9 +98,28 @@ public class TicketController {
         }
     }
 
-    @RequestMapping(path = "/type/add", method = RequestMethod.POST, consumes = "applcation/json")
+    @RequestMapping(path = "/getAllByGeo", method = RequestMethod.GET, consumes = "application/json")
     @ResponseBody
-    public String addTicketType(@RequestBody String name, @RequestBody double weight) {
-        return "TODO"; //TODO
+    public List<Ticket> getAllByGeo(@RequestBody String jsonObj) {
+        JsonObject obj = (JsonObject) new JsonParser().parse(jsonObj);
+        return ticketService.findAllByXBetweenAndYBetween(obj.get("x0").getAsDouble(), obj.get("y0").getAsDouble(), obj.get("x1").getAsDouble(), obj.get("y1").getAsDouble());
+    }
+
+    @RequestMapping(path = "/type/add", method = RequestMethod.POST, consumes = "application/json")
+    @ResponseBody
+    public Integer addTicketType(@RequestBody String jsonObj) {
+        JsonObject obj = (JsonObject) new JsonParser().parse(jsonObj);
+        if (obj.has("name") && obj.has("weight")) {
+            TicketType ticketType = new TicketType();
+            ticketType.setName(obj.get("name").getAsString());
+            ticketType.setWeight(obj.get("weight").getAsInt());
+            return ticketTypeRepository.save(ticketType).getId();
+        } else return -1;
+    }
+
+    @RequestMapping(path = "/type/getAll", method = RequestMethod.GET)
+    @ResponseBody
+    public Iterable<TicketType> getAllTicketTypes(){
+        return  ticketTypeRepository.findAll();
     }
 }

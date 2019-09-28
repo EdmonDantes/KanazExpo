@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,10 +21,10 @@ public class HereApi {
         StringBuilder builder = new StringBuilder();
         builder.append(url).append("?");
         for (Map.Entry<String, String> tmp : param.entrySet()) {
-            builder.append(tmp.getKey()).append("=").append(tmp.getValue()).append("&");
+            builder.append(tmp.getKey()).append("=").append(URLEncoder.encode(tmp.getValue(), "utf-8")).append("&");
         }
 
-        HttpURLConnection urlConnection = (HttpURLConnection) new URL(url).openConnection();
+        HttpURLConnection urlConnection = (HttpURLConnection) new URL(builder.toString()).openConnection();
         urlConnection.setRequestMethod("GET");
 
 
@@ -42,9 +43,8 @@ public class HereApi {
     private static String hereGet(String url, Map<String, String> param) throws IOException {
         param.put("app_id", APP_ID);
         param.put("app_code", APP_CODE);
-        param.put("gen","10");
+        param.put("gen","9");
         param.put("language", "ru");
-        param.put("locationattributes", "ru");
         return get(url, param);
     }
 
@@ -53,9 +53,8 @@ public class HereApi {
         params.put("prox", x + "," + y + "," + 15);
         params.put("mode", "retrieveAddresses");
         params.put("maxresults", "1");
-        params.put("gen","9");
         JsonObject obj = (JsonObject) new JsonParser().parse(hereGet("http://reverse.geocoder.api.here.com/6.2/reversegeocode.json", params));
-        obj = obj.get("Response").getAsJsonObject().get("View").getAsJsonArray().get(0).getAsJsonObject().get("Result").getAsJsonArray().get(0).getAsJsonObject().get("Address").getAsJsonObject();
+        obj = obj.get("Response").getAsJsonObject().get("View").getAsJsonArray().get(0).getAsJsonObject().get("Result").getAsJsonArray().get(0).getAsJsonObject().get("Location").getAsJsonObject().get("Address").getAsJsonObject();
 
         Map<String, String> result = new HashMap<>();
 

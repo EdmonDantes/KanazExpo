@@ -28,7 +28,7 @@ public class RoadService {
         return repository.save(road);
     }
 
-    public boolean addProblem(int idRoad, Ticket ticket) {
+    public boolean addTicket(int idRoad, Ticket ticket) {
         ticket = ticketService.firstInsert(ticket);
 
         if (ticket != null) {
