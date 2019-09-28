@@ -76,7 +76,7 @@ public class TicketController {
 
                 if (type.isPresent()) {
                     ticket.setType(type.get());
-                    roadService.addProblem(roadOptional.get().getId(), ticketService.save(ticket));
+                    roadService.addTicket(roadOptional.get().getId(), ticketService.save(ticket));
                     return "Success";
                 } else
                     return "Wrong type id";

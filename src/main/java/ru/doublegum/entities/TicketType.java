@@ -19,4 +19,7 @@ public class TicketType implements Serializable {
     @Column(nullable = false)
     private Integer weight = 0;
 
+    @Column(nullable = false)
+    private Boolean deprecated = false;
+
 }
