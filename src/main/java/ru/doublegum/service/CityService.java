@@ -28,15 +28,15 @@ public class CityService {
         return repository.save(city);
     }
 
-    public Optional<City> getCityFromId(int id) {
+    public Optional<City> findCityFromId(int id) {
         return repository.findById(id);
     }
 
-    public Optional<City> getCityFromLocationId(String locationId) {
+    public Optional<City> findCityFromLocationId(String locationId) {
         return repository.findByLocationId(locationId);
     }
 
-    public List<City> getCitiesFromName(String name) {
+    public List<City> findCitiesFromName(String name) {
         return repository.findByName(name);
     }
 

@@ -4,8 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Data
@@ -20,18 +18,20 @@ public class Ticket implements Serializable {
     @Column(nullable = false)
     private Double y;
 
-    @Column(nullable = false)
-    private Integer weight = 0;
+    private String description;
+
+    @Lob
+    private byte[] picture;
 
     @ManyToOne
-    private TicketProblemType type;
+    private TicketType type;
 
     @ManyToOne
     private TicketStatus status;
 
     // TODO: equals UTC-0
     @Column
-    private long datetimeTicketCreated;
+    private long datetimeTicketCreated = System.currentTimeMillis();
 
     @Column
     private long datetimeTicketChecked;

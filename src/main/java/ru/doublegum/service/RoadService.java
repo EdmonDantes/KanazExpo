@@ -2,6 +2,7 @@ package ru.doublegum.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.doublegum.entities.City;
 import ru.doublegum.entities.Road;
 import ru.doublegum.entities.Ticket;
 import ru.doublegum.repositories.RoadRepository;
@@ -42,7 +43,7 @@ public class RoadService {
         return false;
     }
 
-//    public boolean deleteProblem(Integer id) {
-//
-//    }
+    public Optional<Road> findByCityAndName(City city, String name) {
+        return repository.findByCityAndName(city, name);
+    }
 }
