@@ -15,8 +15,10 @@ public class Ticket implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @OneToMany
-    private Set<GeoPoint> geoPoints = new HashSet<>();
+    @Column(nullable = false)
+    private Double x;
+    @Column(nullable = false)
+    private Double y;
 
     @ManyToOne
     private TicketProblemType type;
