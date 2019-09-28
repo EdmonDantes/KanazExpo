@@ -1,9 +1,8 @@
-package ru.doublegum.entityes;
+package ru.doublegum.entities;
 
 import lombok.Data;
 
 import javax.persistence.*;
-import javax.print.attribute.HashAttributeSet;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;

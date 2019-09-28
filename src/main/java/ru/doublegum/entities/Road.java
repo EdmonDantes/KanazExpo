@@ -1,4 +1,4 @@
-package ru.doublegum.entityes;
+package ru.doublegum.entities;
 
 import lombok.Data;
 
@@ -24,7 +24,7 @@ public class Road implements Serializable {
     private Integer count = 0;
 
     @OneToMany
-    private Set<RoadProblem> problems = new HashSet<>();
+    private Set<Ticket> tickets = new HashSet<>();
 
     @ManyToOne
     private City city;

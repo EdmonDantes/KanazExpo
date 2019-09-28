@@ -7,9 +7,9 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
 @Data
-public class RoadProblem implements Serializable {
+@Entity
+public class TicketProblemType implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,9 +22,12 @@ public class RoadProblem implements Serializable {
     private Double y;
 
     @Column(nullable = false)
-    private RoadProblemType type = RoadProblemType.ROUGHNESS;
+    private String name;
 
     @Column(nullable = false)
-    private Integer weight = 0;
+    @OneToMany
+    private Set<Ticket> problems = new HashSet<>();
+
+
 
 }
