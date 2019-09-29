@@ -5,10 +5,7 @@ import com.google.gson.JsonParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.doublegum.HereApi;
-import ru.doublegum.entities.City;
-import ru.doublegum.entities.Road;
-import ru.doublegum.entities.Ticket;
-import ru.doublegum.entities.TicketType;
+import ru.doublegum.entities.*;
 import ru.doublegum.repositories.TicketTypeRepository;
 import ru.doublegum.service.CityService;
 import ru.doublegum.service.RoadService;
@@ -149,5 +146,22 @@ public class TicketController {
     @ResponseBody
     public TicketType getType(@RequestParam Integer id){
         return ticketTypeRepository.findById(id).orElse(null);
+    }
+
+    @RequestMapping("/type/deleteAll")
+    @ResponseBody
+    public boolean deleteAllTypes(){
+        try {
+            ticketTypeRepository.deleteAll();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @RequestMapping(path = "/status/getAll", method = RequestMethod.GET)
+    @ResponseBody
+    public Iterable<TicketStatus> getAllStatus(){
+        return ticketStatusService.getAll();
     }
 }
