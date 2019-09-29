@@ -3,6 +3,7 @@ package ru.doublegum.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.doublegum.entities.Ticket;
+import ru.doublegum.entities.TicketStatus;
 import ru.doublegum.repositories.TicketRepository;
 
 import java.util.List;
@@ -28,7 +29,15 @@ public class TicketService {
         return repository.findAllByXBetweenAndYBetween(x0, x1, y0, y1);
     }
 
+    public List<Ticket> getAll() {
+        return repository.getAll();
+    }
+
     public Optional<Ticket> findById(Integer id) {
         return repository.findById(id);
+    }
+
+    public List<Ticket> findAllByStatus(TicketStatus status){
+        return repository.findAllByStatus(status);
     }
 }

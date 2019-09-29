@@ -18,7 +18,11 @@ public class Ticket implements Serializable {
     @Column(nullable = false)
     private Double y;
 
-    private String description;
+    @Column
+    private String email; //TODO
+
+    @Column
+    private String description; //TODO annotation
 
     @Lob
     private byte[] picture;

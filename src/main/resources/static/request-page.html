@@ -33,9 +33,11 @@
     <link rel="stylesheet" type="text/css"
           href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
 
+    <script src = "js/requests.js"></script>
+
 </head>
 
-<body>
+<body onload = "loadProblemTypeSelect()">
 
 <!-- Header -->
 <header class="header">
@@ -133,14 +135,11 @@
                 <h2>Подать заявку</h2>
             </div>
             <div class="repair-service-form">
-                <form action="#">
+                <form id = "ticket-form">
                     <div class="row">
                         <div class="col-12">
                             <label for="problemTypeSelect">Выберите категорию проблемы:</label>
                             <select class="form-control" id="problemTypeSelect">
-                                <option>Разбитая дорога</option>
-                                <option>Дорожная яма</option>
-                                <option>Открытый канализационный люк</option>
                             </select>
                         </div>
                     </div>
@@ -167,7 +166,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="submit" value="Отправить заявку">
+                            <input type="button" onclick = "createTicket(); return false;" value="Отправить заявку">
                         </div>
                     </div>
                 </form>

@@ -5,10 +5,7 @@ import com.google.gson.JsonParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.doublegum.HereApi;
-import ru.doublegum.entities.City;
-import ru.doublegum.entities.Road;
-import ru.doublegum.entities.Ticket;
-import ru.doublegum.entities.TicketType;
+import ru.doublegum.entities.*;
 import ru.doublegum.repositories.TicketTypeRepository;
 import ru.doublegum.service.CityService;
 import ru.doublegum.service.RoadService;
@@ -17,10 +14,7 @@ import ru.doublegum.service.TicketStatusService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/ticket")
@@ -49,6 +43,19 @@ public class TicketController {
     //        response.setHeader("Access-Control-Allow-Headers", "X_PINGOTHER, Content-Type");
     //        response.setHeader("Access-Control-Max-Age","86400");
     //    }
+
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    @ResponseBody
+    public Iterable<Ticket> getAll() {return ticketService.getAll(); }
+
+    @RequestMapping(value = "/getAllBy/status", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Ticket> getAllByStatus(@RequestParam Integer statusId) {
+
+        TicketStatus status = ticketStatusService.getById(statusId);
+        return ticketService.findAllByStatus(status);
+    }
+
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     @ResponseBody
@@ -144,5 +151,22 @@ public class TicketController {
     @ResponseBody
     public TicketType getType(@RequestParam Integer id){
         return ticketTypeRepository.findById(id).orElse(null);
+    }
+
+    @RequestMapping("/type/deleteAll")
+    @ResponseBody
+    public boolean deleteAllTypes(){
+        try {
+            ticketTypeRepository.deleteAll();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @RequestMapping(path = "/status/getAll", method = RequestMethod.GET)
+    @ResponseBody
+    public Iterable<TicketStatus> getAllStatus(){
+        return ticketStatusService.getAll();
     }
 }
