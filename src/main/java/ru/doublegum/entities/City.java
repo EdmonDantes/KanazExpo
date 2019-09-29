@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Entity
 @Data
-public class City implements Serializable {
+    public class City implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

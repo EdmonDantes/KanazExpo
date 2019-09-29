@@ -11,5 +11,5 @@ import java.util.Optional;
 @Repository
 public interface RoadRepository extends CrudRepository<Road, Integer> {
     Optional<Road> findByCityAndName(City city, String name);
-    List<Road> findAllByCityOrderBySumDesc(City city);
+    List<Road> findAllByCity(City city);
 }
