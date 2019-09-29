@@ -52,7 +52,6 @@ public class TicketTypeService {
             repository.save(tmp);
         }
     }
-
 }
 
 
