@@ -13,7 +13,7 @@ public class MapController {
     @RequestMapping(value = "getBadStreet", method = RequestMethod.GET)
     @ResponseBody
     public String getBadStreet(@RequestParam double x0, @RequestParam double y0, @RequestParam double x1, @RequestParam double y1) {
-        // ыTODO: get data from db
+        // TODO: get data from db
         JsonObject jsonObject = new JsonObject();
         jsonObject.add("start_x", new JsonPrimitive((x0 + x1) / 2 - (x0 + x1) / 5));
         jsonObject.add("start_y", new JsonPrimitive((y0 + y1) / 2 - (y0 + y1) / 5));

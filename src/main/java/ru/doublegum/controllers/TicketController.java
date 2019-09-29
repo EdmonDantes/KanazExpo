@@ -50,6 +50,11 @@ public class TicketController {
     //        response.setHeader("Access-Control-Max-Age","86400");
     //    }
 
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    @ResponseBody
+    public Iterable<Ticket> getAll() {return ticketService.getAll(); }
+
+
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     @ResponseBody
     public Ticket get(@RequestParam Integer id) {
