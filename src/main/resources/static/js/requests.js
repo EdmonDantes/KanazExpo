@@ -78,7 +78,6 @@ let createTicket = async () => {
         'y': problemGeoData.lng,
         'typeId': problemTypeId,
         'description': problemDescription,
-        'picture': ""
     };
 
     console.log(ticket);
