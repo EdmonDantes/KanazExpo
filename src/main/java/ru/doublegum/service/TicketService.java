@@ -29,8 +29,8 @@ public class TicketService {
         return repository.findAllByXBetweenAndYBetween(x0, x1, y0, y1);
     }
 
-    public List<Ticket> getAll() {
-        return repository.getAll();
+    public Iterable<Ticket> getAll() {
+        return repository.findAll();
     }
 
     public Optional<Ticket> findById(Integer id) {

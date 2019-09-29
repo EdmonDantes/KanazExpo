@@ -7,9 +7,7 @@ import ru.doublegum.entities.Road;
 import ru.doublegum.service.CityService;
 import ru.doublegum.service.RoadService;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/road")
@@ -27,12 +25,8 @@ public class RoadController {
 
     @RequestMapping(path = "/getAllBy/city", method = RequestMethod.GET)
     @ResponseBody
-    public List<Road> getAllByCity(@RequestParam Integer cityId) {
-        Optional<City> city = cityService.findCityById(cityId);
-        if (city.isPresent()) {
-            return roadService.findAllByCity(city.get());
-        }
-        return Collections.EMPTY_LIST;
+    public Set<Road> getAllByCity(@RequestParam Integer cityId) {
+        return cityService.findCityById(cityId).orElse(new City()).getRoads();
     }
 
     @RequestMapping(path = "/getBy/id", method = RequestMethod.GET)

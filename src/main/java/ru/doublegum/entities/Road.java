@@ -1,5 +1,6 @@
 package ru.doublegum.entities;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import lombok.Data;
 
 import javax.persistence.*;

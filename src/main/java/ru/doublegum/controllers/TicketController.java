@@ -51,7 +51,6 @@ public class TicketController {
     @RequestMapping(value = "/getAllBy/status", method = RequestMethod.GET)
     @ResponseBody
     public List<Ticket> getAllByStatus(@RequestParam Integer statusId) {
-
         TicketStatus status = ticketStatusService.getById(statusId);
         return ticketService.findAllByStatus(status);
     }
@@ -95,7 +94,6 @@ public class TicketController {
                     road.setName(address.get("street"));
                     road.setCount(0);
                     road.setSum(0);
-                    road.setCity(tmp0.get());
                     roadOptional = Optional.of(roadService.save(road));
                     cityService.addRoad(tmp0.get().getId(), roadOptional.get());
                 }

@@ -12,6 +12,5 @@ import java.util.List;
 public interface TicketRepository extends CrudRepository<Ticket, Integer> {
 
     List<Ticket> findAllByXBetweenAndYBetween(double x0, double x1, double y0, double y1);
-    List<Ticket> getAll();
     List<Ticket> findAllByStatus(TicketStatus status);
 }
