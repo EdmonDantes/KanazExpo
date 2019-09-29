@@ -49,12 +49,17 @@ function setUpClickListener(map) {
               lng: a2
           }
           console.log(a1);
-
+          if (marker)
+            map.removeObject(marker);
 
           marker = new H.map.Marker({lat: a1, lng: a2}, { icon: icon });
 
-          if (marker)
+            if (marker)
               map.addObject(marker);
+                g
+
+
+
           
           
     });   
