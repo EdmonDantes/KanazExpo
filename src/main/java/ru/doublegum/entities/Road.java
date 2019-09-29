@@ -18,7 +18,7 @@ public class Road implements Serializable {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false) //TODO sum & count
+    @Column(nullable = false)
     private Integer sum = 0;
 
     @Column(nullable = false)
