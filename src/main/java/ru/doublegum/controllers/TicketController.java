@@ -73,6 +73,7 @@ public class TicketController {
             int typeId = obj.get("typeId").getAsInt();
             String description = obj.get("description").getAsString();
             byte[] picture = obj.get("picture").getAsString().getBytes();
+            //TODO test
 
             Map<String, String> address = HereApi.getAddressFromPoint(x, y);
             if (address.containsKey("country") && address.containsKey("city")) {
