@@ -803,6 +803,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 ------------------------------------------*/
 .bg-gray {
   background-color: #f8f8f8;
+  block-progression: 30;
 }
 
 img.mfp-img {
