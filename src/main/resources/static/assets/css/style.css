@@ -805,7 +805,12 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   background-color: #f8f8f8;
   block-progression: 30;
 }
-
+.ti-menu{
+  position: fixed; /* Абсолютное позиционирование */
+  left: 15px; /* Положение от нижнего края */
+  top: 15px; /* Положение от правого края */
+  line-height: 1px;
+}
 img.mfp-img {
   background-color: #f6f7f8;
   padding: 0;
