@@ -31,5 +31,10 @@ public class TicketStatusService {
         return repository.findAll();
     }
 
+    public TicketStatus getById(int id) {
+        return repository.findById(id).orElse(null);
+    }
+
+
 
 }

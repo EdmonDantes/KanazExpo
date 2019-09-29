@@ -51,9 +51,9 @@ public class TicketController {
     @RequestMapping(value = "/getAllBy/status", method = RequestMethod.GET)
     @ResponseBody
     public List<Ticket> getAllByStatus(@RequestParam Integer statusId) {
-        TicketStatus status =
-        return ticketService.findAllByStatus(status);
 
+        TicketStatus status = ticketStatusService.getById(statusId);
+        return ticketService.findAllByStatus(status);
     }
 
 
