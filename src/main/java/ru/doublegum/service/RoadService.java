@@ -63,7 +63,7 @@ public class RoadService {
     }
 
     public List<Road> findAllByCity(City city) {
-        return repository.findAllByCityOrderBySumDesc(city);
+        return repository.findAllByCity(city);
     }
 
 }
