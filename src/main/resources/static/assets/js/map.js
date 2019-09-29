@@ -56,7 +56,14 @@ function setUpClickListener(map) {
 
             if (marker)
               map.addObject(marker);
-                g
+
+
+                let addMarker= () => {
+                    let problemAddress = document.getElementById('problemAddress')
+                    problemAddress.setAttribute('data-geo-lat',a1);
+                    problemAddress.setAttribute('data-geo-lng',a2) ;
+
+                    }
 
 
 
