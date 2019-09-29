@@ -1,1 +1,1 @@
-const plaform = new H.service.Platform({api})
+    xconst plaform = new H.service.Platform({api})
