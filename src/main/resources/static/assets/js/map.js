@@ -11,8 +11,7 @@ const map = new H.Map(
         zoom: 13,
         center: {lng: 46.013017, lat: 51.540878}
     }
-);
-var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
+); var ui = H.ui.UI.createDefault(map, defaultLayers, 'ru-RU');
 
 
 const mapEvent = new H.mapevents.MapEvents(map);
