@@ -25,26 +25,41 @@ mapSettings.setAlignment('top-left');
 zoom.setAlignment('top-left');
 scalebar.setAlignment('top-left');*/
 console.log('начало');
+let marker = null;
+var icon = new H.map.Icon('marker.png');
 function setUpClickListener(map) {
+    if (marker)
+        H.map.removeObject(marker);
     // Attach an event listener to map display
     // obtain the coordinates and display in an alert box.
-    map.addEventListener('tap', function (evt) { console.log('внутри функции evt')
+    map.addEventListener('tap', function (evt)
+    {
+        console.log('внутри функции evt')
         var coord = map.screenToGeo     (evt.currentPointer.viewportX,
             evt.currentPointer.viewportY);
         logEvent('Clicked at ' + Math.abs(coord.lat.toFixed(6   )) +
             ((coord.lat > 0) ? 'N' : 'S') +
             ' ' + Math.abs(coord.lng.toFixed(6)) +
             ((coord.lng > 0) ? 'E' : 'W'));
-        let a = new Array();
-         a [1] =Math.abs(coord.lat.toFixed(6)) +
-             ((coord.lat > 0) ? 'N' : 'S') ;
-         a[2]=Math.abs(coord.lng.toFixed(6)) +
-             ((coord.lng > 0) ? 'E' : 'W');
-         console.log('a[i]');
-        console.log(a[1]);
-        console.log(a[2]);
-    });
+
+          a1 =Math.abs(coord.lat.toFixed(6));
+          a2 = Math.abs(coord.lng.toFixed(6));
+          coords = {
+              lat: a1,
+              lng: a2
+          }
+          console.log(a1);
+
+
+          marker = new H.map.Marker({lat: a1, lng: a2}, { icon: icon });
+
+          if (marker)
+              map.addObject(marker);
+          
+          
+    });   
 }
+
 window.addEventListener('resize', () => map.getViewPort().resize());
 var logContainer = document.createElement('ul');
 logContainer.className ='log';
@@ -61,6 +76,34 @@ function logEvent(str) {
 
 console.log('вызов map')
 
+// Create an icon, an object holding the latitude and longitude, and a marker:
+
+
+
+
+
+
+
+   // Create an icon, an object holding the latitude and longitude, and a marker:
+
+
+
+
+
+
+
+
+
+
 setUpClickListener(map);
+
+
+
+
+
+
+
+
+
 
 
