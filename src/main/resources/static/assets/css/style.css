@@ -1240,7 +1240,7 @@ img.mfp-img {
   overflow: hidden;
   position: relative;
   z-index: 1;
-  transition: all 0.3s ease 0s;
+  transition: all 0.2s ease 0s;
 }
 .btn:focus {
   outline: none;
@@ -1793,7 +1793,7 @@ img.mfp-img {
   margin-top: 30px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 .sub-menu li {
   position: relative;
@@ -1964,7 +1964,7 @@ img.mfp-img {
   }
 }
 .hero-content > * {
-  animation-duration: 1s;
+  animation-duration: 0.7s;
   animation-fill-mode: both;
   animation-name: fadeOutUp;
 }
@@ -2051,7 +2051,7 @@ img.mfp-img {
   animation-delay: 2.5s;
 }
 .slick-active .hero-content > *:nth-child(6) {
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 
 /*--
@@ -2346,7 +2346,7 @@ img.mfp-img {
   transform: translateY(-50%);
   z-index: 2;
   border-radius: 100%;
-  transition: 0.4s ease-in-out;
+  transition: 0.5s ease-in-out;
   opacity: 0;
   visibility: hidden;
 }
@@ -2377,13 +2377,13 @@ img.mfp-img {
   border-radius: 100%;
   float: left;
   text-align: center;
-  margin-right: 22px;
+  margin-right: 10px;
   margin-top: 10px;
 }
 @media only screen and (max-width: 767px) {
   .service-6 .icons {
     margin: auto;
-    margin-bottom: 21px;
+    margin-bottom: 10px;
     float: inherit;
   }
 }
@@ -2445,7 +2445,7 @@ img.mfp-img {
   border-radius: inherit;
   float: left;
   text-align: center;
-  margin-right: 25px;
+  margin-right: 10px;
   margin-top: 10px;
   max-width: 60px;
 }
@@ -2453,7 +2453,7 @@ img.mfp-img {
   overflow: hidden;
 }
 .service-6.medical-service .content h4 {
-  color: "Montserrat", sans-serif;
+
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 7px;
@@ -2462,7 +2462,7 @@ img.mfp-img {
 .service-6.medical-service .content p {
   font-size: 14px;
   line-height: 26px;
-  color: "Montserrat", sans-serif;
+
 }
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
   .service-6.medical-service {
@@ -2475,7 +2475,7 @@ img.mfp-img {
   }
   .service-6.medical-service .icons {
     max-width: 45px;
-    margin-right: 15px;
+    margin-right: 10px;
   }
   .service-6.medical-service .content h4 {
     font-size: 16px;
