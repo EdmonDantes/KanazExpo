@@ -27,4 +27,8 @@ public class TicketStatusService {
         return repository.findById(5).orElse(null);
     }
 
+    public Iterable<TicketStatus> getAll(){
+        return repository.findAll();
+    }
+
 }
