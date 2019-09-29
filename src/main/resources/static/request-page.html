@@ -146,7 +146,7 @@
                     <div class="row">
                         <div class="col-12">
                             <label for="problemAddress">Приблизительный адрес проблемного участка:</label>
-                            <input id="problemAddress" type="text" placeholder="Выберите местоположение на карте"
+                            <input data-geo-ltd = "" data-geo-lng = "" id="problemAddress" type="text" placeholder="Выберите местоположение на карте"
                                    readonly/>
                         </div>
                     </div>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="button" onclick = "createTicket(); return false;" value="Отправить заявку">
+                            <input type="button" onclick = "createTicket();" value="Отправить заявку">
                         </div>
                     </div>
                 </form>
