@@ -14,10 +14,7 @@ import ru.doublegum.service.TicketStatusService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/ticket")
@@ -46,6 +43,19 @@ public class TicketController {
     //        response.setHeader("Access-Control-Allow-Headers", "X_PINGOTHER, Content-Type");
     //        response.setHeader("Access-Control-Max-Age","86400");
     //    }
+
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    @ResponseBody
+    public Iterable<Ticket> getAll() {return ticketService.getAll(); }
+
+    @RequestMapping(value = "/getAllBy/status", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Ticket> getAllByStatus(@RequestParam Integer statusId) {
+        TicketStatus status =
+        return ticketService.findAllByStatus(status);
+
+    }
+
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     @ResponseBody
