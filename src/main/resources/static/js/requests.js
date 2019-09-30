@@ -1,10 +1,10 @@
 let APILocation = "http://doublegum.site:8080";
 
 let loadProblemTypeSelect = async () => {
-    let response = await fetch("http://doublegum.site:8080/api/ticket/type/getAll");
+    let response = await fetch("http://localhost:8080/api/ticket/type/getAll");
     console.log(response);
 
-    let categoriesList;
+    let categoriesList; // categoryList/categories
 
     if (response.ok) {
         categoriesList = await response.json();
@@ -26,16 +26,21 @@ let loadProblemTypeSelect = async () => {
 }
 
 let addProblemCategory = async () => {
-    let newTitle = document.getElementById("categoryTitle");
-    let newWeight = document.getElementById("categoryWeight");
+    let newTitle = document.getElementById("categoryTitle").value;
+    let newWeight = document.getElementById("categoryWeight").value;
 
-    let response = await fetch('http://doublegum.site:8080/api/ticket/type/add',
+    let problemType = {
+        name: newTitle,
+        weight: newWeight
+    }
+    console.log(JSON.stringify({'name': newTitle, 'weight': newWeight}));
+    let response = await fetch('http://localhost:8080/api/ticket/type/add',
         {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json; charset="utf-8"'
             },
-            body: JSON.stringify({name: newTitle.value, weight: newWeight.value})
+            body: JSON.stringify({'name': newTitle, 'weight': newWeight})
         });
 
     let result = await response.json();
@@ -62,9 +67,14 @@ let createTicket = async () => {
 
     let problemAddressInput = document.getElementById("problemAddress");
 
-    let problemGeoData = {
+    /*let problemGeoData = {
         lat: problemAddressInput.getAttribute('data-geo-lat'),
         lng: problemAddressInput.getAttribute('data-geo-lng')
+    }*/
+
+    let problemGeoData = {
+        lat: 0,
+        lng: 0
     }
 
     let problemAddress = "г. Саратов, ул. Московская, д. 55";
@@ -82,7 +92,7 @@ let createTicket = async () => {
 
     console.log(ticket);
 
-    let response = await fetch('http://doublegum.site:8080/api/ticket/add',
+    let response = await fetch('http://localhost:8080/api/ticket/add',
         {
             method: 'POST',
             headers: {
@@ -94,7 +104,7 @@ let createTicket = async () => {
 
     await(console.log(response.json()));
 
-    response = await fetch('http://doublegum.sit:8080/api/ticket/getAll',
+    response = await fetch('http://localhost:8080/api/ticket/getAll',
         {
             method: 'GET',
             mode: 'cors',

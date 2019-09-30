@@ -22,6 +22,6 @@ import java.util.Set;
     @Column(nullable = false)
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "city", targetEntity = Road.class)
     private Set<Road> roads = new HashSet<>();
 }

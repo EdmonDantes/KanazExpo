@@ -28,6 +28,7 @@ public class Road implements Serializable {
     @OneToMany
     private Set<Ticket> tickets = new HashSet<>();
 
-    @ManyToOne
+    @ManyToOne(targetEntity = City.class)
+    @JoinColumn(name = "city")
     private City city;
 }

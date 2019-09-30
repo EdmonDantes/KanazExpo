@@ -13,6 +13,7 @@ import ru.doublegum.service.TicketService;
 import ru.doublegum.service.TicketStatusService;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.*;
 
@@ -62,6 +63,11 @@ public class TicketController {
         return ticketService.findById(id).orElse(null);
     }
 
+    @RequestMapping("/add0")
+    public void add(@RequestBody @Valid Ticket t){
+
+    }
+
     @RequestMapping(value = "/add", consumes = "application/json", method = RequestMethod.POST)
     @ResponseBody
     public String add(@RequestBody String jsonObj){
@@ -103,7 +109,6 @@ public class TicketController {
                 ticket.setX(x);
                 ticket.setY(y);
                 ticket.setDescription(description);
-                ticket.setPicture(picture);
                 ticket.setStatus(ticketStatusService.getCreatedStatus());
 
                 Optional<TicketType> type = ticketTypeRepository.findById(typeId);
@@ -131,9 +136,13 @@ public class TicketController {
     @RequestMapping(path = "/type/add", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     public Integer addTicketType(@RequestBody String jsonObj) {
+        System.out.println("Adding ticket type");
+
         JsonObject obj = (JsonObject) new JsonParser().parse(jsonObj);
+        System.out.println(jsonObj);
         if (obj.has("name") && obj.has("weight")) {
             TicketType ticketType = new TicketType();
+            System.out.println(obj.get("name"));
             ticketType.setName(obj.get("name").getAsString());
             ticketType.setWeight(obj.get("weight").getAsInt());
             return ticketTypeRepository.save(ticketType).getId();
